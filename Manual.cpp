@@ -71,7 +71,7 @@ void Manual::setVisualAid(const bool present_aid){
 /**
   @return  : the visual aid flag
 **/
-bool Manual::hasVisualAid(){
+bool Manual::hasVisualAid() const{
     return this->visual_aid;
 };
 
@@ -79,7 +79,7 @@ bool Manual::hasVisualAid(){
 /**
   @return  : the has website flag
 **/
-bool Manual::hasWebsite(){
+bool Manual::hasWebsite() const{
     return this->website;
 };
 
