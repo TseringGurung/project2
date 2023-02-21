@@ -46,16 +46,16 @@ Novel();
   @param     : A flag indicating whether there is a film adaptation
                 for this novel with DEFAULT VALUE False (a Boolean)
 */
-Novel(std::string book_title, std::string book_author, int book_page, bool is_digital, std::string genre_novel, bool film_adapt);
-std::string getGenre();
-void setGenre();
-std::vector<std::string> getCharacterList();
+Novel(std::string title, std::string author, int page_count, bool is_digital, std::string genre_novel, bool film_adapt);
+std::string getGenre() const;
+void setGenre(const std::string genre_novel);
+std::vector<std::string> getCharacterList() const;
 std::vector<std::string> getCharacterListString();
-std::string addCharacter();
-void hasFilmAdaptation();
-bool setFilmAdaptation();
-std::string getAverageRating();
-double createReview();
+void addCharacter(std::string character);
+bool hasFilmAdaptation();
+void setFilmAdaptation();
+double getAverageRating();
+double createReview(double review_score, std::string review_rating);
 void addReview();
 void calculateAverageRating();
 
