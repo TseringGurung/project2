@@ -49,9 +49,9 @@ class Manual : public Book{
     Manual(std::string title, std::string author, int page_count, std::string name_of_device, bool is_digital, std::string url_format, bool present_aid = false);
     void setDevice(const std::string& name_of_device);
     std::string getDevice() const;
-    std::string setWebsite(const std::string& url_format);
+    bool setWebsite(const std::string& url_format);
     std::string getWebsite() const;
-    void setVisualAid(const bool present_aid);
+    void setVisualAid(bool present_aid);
     bool hasWebsite() const;
     bool hasVisualAid() const;
 };
