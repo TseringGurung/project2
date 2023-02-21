@@ -50,14 +50,14 @@ Novel(std::string title, std::string author, int page_count, bool is_digital, st
 std::string getGenre() const;
 void setGenre(const std::string genre_novel);
 std::vector<std::string> getCharacterList() const;
-std::vector<std::string> getCharacterListString();
-void addCharacter(std::string character);
-bool hasFilmAdaptation();
+std::vector<std::string> getCharacterListString() const;
+void addCharacter(const std::string character);
+bool hasFilmAdaptation() const;
 void setFilmAdaptation();
-double getAverageRating();
-double createReview(double review_score, std::string review_rating);
-void addReview();
-void calculateAverageRating();
+double getAverageRating() const;
+double createReview(const double review_score,const std::string review_rating);
+void addReview(const std::string review);
+void calculateAverageRating() const;
 
 
 };
