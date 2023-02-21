@@ -1,17 +1,21 @@
 #include "Novel.hpp"
 
 Novel::Novel(){
-
+    novel_genre ="";
+    character_list = {};
+    reviews = {};
+    avrg_rating = 0;
+    film_adaptation = false;
 }
 
-Novel::Novel(std::string book_title, std::string book_author, int book_page, bool is_digital, std::string genre_novel, bool film_adapt){}
+Novel::Novel(std::string title, std::string author, int page_count, bool is_digital, std::string genre_novel, bool film_adapt){}
 
 
 /**
   @return   : the value of the genre private member
 **/
-std::string Novel::getGenre(){
-  
+std::string Novel::getGenre() const{
+    return this->novel_genre;
 }
 
 
@@ -20,16 +24,16 @@ std::string Novel::getGenre(){
   @post   : sets sets genre_ private member to the
               value of the parameter
 **/
-void Novel::setGenre(){
-
+void Novel::setGenre(const std::string genre_novel){
+    this->novel_genre = genre_novel;
 }
 
 
 /**
   @return   : the vector containing the list of characters for this novel
 **/
-std::vector<std::string> Novel::getCharacterList(){
-
+std::vector<std::string> Novel::getCharacterList() const{
+    return this->character_list;
 }
 
 
@@ -40,7 +44,7 @@ std::vector<std::string> Novel::getCharacterList(){
               For example: "character1 character2 character3"
 **/
 std::vector<std::string> Novel::getCharacterListString(){
-
+    
 }
 
 
@@ -48,16 +52,16 @@ std::vector<std::string> Novel::getCharacterListString(){
   @param  : a string indicating a character
   @post   : inserts the character into the character_list_ vector
 **/
-std::string Novel::addCharacter(){
-
+void Novel::addCharacter(std::string character){
+    character_list.push_back(character);
 }
 
 
 /**
   @return   : the value of the film_adaptation private member
 **/
-void Novel::hasFilmAdaptation(){
-
+bool Novel::hasFilmAdaptation(){
+    return this->film_adaptation;
 }
 
 
@@ -65,16 +69,16 @@ void Novel::hasFilmAdaptation(){
 /**
   @post   : sets has_film_adaptation_ private member to true
 **/
-bool Novel::setFilmAdaptation(){
-
+void Novel::setFilmAdaptation(){
+    this->film_adaptation = true;
 }
 
 
 /**
   @return   : the value of the average rating private member
 **/
-std::string Novel::getAverageRating(){
-
+double Novel::getAverageRating(){
+    return this->avrg_rating;
 }
 
 
@@ -86,8 +90,8 @@ std::string Novel::getAverageRating(){
   @return   : creates and returns a review data type with
               score and rating as indicated by the parameters
 */
-double Novel::createReview(){
-
+double Novel::createReview(double review_score, std::string review_rating){
+  return createReview(review_score, review_rating);
 }
 
 
