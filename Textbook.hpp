@@ -45,12 +45,12 @@ class Textbook : public Book{
                     corresponding parameters.
     */
     Textbook(std::string title, std::string author, int page_count, std::string book_subject, bool is_digital, grade_level book_grade_level, bool review_questions = false);
-    void setSubject(std::string& book_subject);
-    std::string getSubject();
-    void setGradeLevel(grade_level& grade_level_);
-    int getGradeLevel();
+    void setSubject(const std::string book_subject);
+    std::string getSubject() const;
+    void setGradeLevel(const grade_level grade_level_);
+    int getGradeLevel() const;
     void setReviewQuestions();
-    bool checkReviewQuestions();
+    bool checkReviewQuestions() const;
 
 };
 
