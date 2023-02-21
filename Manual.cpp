@@ -37,15 +37,17 @@ std::string Manual::getDevice() const{
              store "Broken Link" in the link member variable (see <regex>)
              and either way set the has website flag to True
 **/
-std::string Manual::setWebsite(const std::string& url_format){
+bool Manual::setWebsite(const std::string& url_format){
     std::regex regPattern("https://www\\.[a-zA-Z0-9]+\\.[a-zA-Z]{2,}");
 
     if (std::regex_match(url_format, regPattern)) {
       this->url = url_format;
       website = true;
+      return true;
     } else {
       url = "";
       website = false;
+      return false;
     }
 };
 
@@ -63,7 +65,7 @@ std::string Manual::getWebsite() const{
   @post   : sets the private member variable indicating the presence
             of a visual aid to the value of the parameter
 **/
-void Manual::setVisualAid(const bool present_aid){
+void Manual::setVisualAid(bool present_aid){
     this->visual_aid = present_aid;
 };
 
@@ -82,4 +84,3 @@ bool Manual::hasVisualAid() const{
 bool Manual::hasWebsite() const{
     return this->website;
 };
-
