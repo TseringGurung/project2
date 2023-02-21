@@ -1,16 +1,13 @@
-#include <iostream>
-#include <string>
-#include <regex>
 #include "Manual.hpp"
 
-Manual::Manual(): url{0}, device_name{0}, visual_aid{0}{
+Manual::Manual(){
     std::string url = "";
     std::string device_name = "";
     bool visual_aid = false;
     bool website = false;
 }
 
-Manual::Manual(std::string title, std::string author, int page_count, std::string name_of_device, std::string url_format, bool is_digital = false, bool present_aid = false):
+Manual::Manual(std::string title, std::string author, int page_count, std::string name_of_device, bool is_digital = false, std::string url_format, bool present_aid = false):
 Book(title, author, page_count, is_digital), device_name(name_of_device), url(url_format), visual_aid(present_aid){}
 
 /**
@@ -44,11 +41,11 @@ std::string Manual::setWebsite(const std::string& url_format){
     std::regex regPattern("https://www\\.[a-zA-Z0-9]+\\.[a-zA-Z]{2,}");
 
     if (std::regex_match(url_format, regPattern)) {
-        this->url = url_format;
-        website = true;
+      this->url = url_format;
+      website = true;
     } else {
-        // do something else if the URL does not match the pattern
-        website = true;
+      url = "";
+      website = false;
     }
 };
 
