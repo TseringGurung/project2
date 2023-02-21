@@ -10,6 +10,8 @@
 */
 enum grade_level{NONE,  ELEMENTARY, JUNIOR_HIGH, HIGH_SCHOOL, COLLEGE};
 
+grade_level grade_level_ = NONE;
+
 class Textbook : public Book{
     /* private
     - a string the represents the subject of the book
@@ -17,8 +19,8 @@ class Textbook : public Book{
     - a boolean that indicates whether the book has review questions or not
     */
     private:
-    std::string book_subject;
-    int booK_grade_level;
+    std::string book_subject_;
+    grade_level book_grade_level_;
     bool book_review_questions;
 
     public:
@@ -42,10 +44,10 @@ class Textbook : public Book{
     @post      : The private members are set to the values of the
                     corresponding parameters.
     */
-    Textbook(std::string book_title, std::string book_author, int book_pages, bool is_digital, std::string book_subject, int book_grade_level, bool review_questions);
-    void setSubject();
+    Textbook(std::string title, std::string author, int page_count, std::string book_subject, bool is_digital, grade_level book_grade_level, bool review_questions = false);
+    void setSubject(std::string& book_subject);
     std::string getSubject();
-    void setGradeLevel();
+    void setGradeLevel(grade_level& grade_level_);
     int getGradeLevel();
     void setReviewQuestions();
     bool checkReviewQuestions();
