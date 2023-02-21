@@ -2,6 +2,7 @@
 #define MANUAL_H
 #include <iostream>
 #include <string>
+#include <regex>
 #include "Book.hpp"
 
 class Manual : public Book{
@@ -45,7 +46,7 @@ class Manual : public Book{
                     If the URL is ill-formatted, the website is set to
                     empty string and the website flag is set to False.
     */
-    Manual(std::string title, std::string author, int page_count, std::string name_of_device, std::string url_format, bool is_digital = false, bool present_aid = false);
+    Manual(std::string title, std::string author, int page_count, std::string name_of_device, bool is_digital, std::string url_format, bool present_aid = false);
     void setDevice(const std::string& name_of_device);
     std::string getDevice() const;
     std::string setWebsite(const std::string& url_format);
