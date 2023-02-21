@@ -43,7 +43,7 @@ std::vector<std::string> Novel::getCharacterList() const{
               and separated by a space " " .
               For example: "character1 character2 character3"
 **/
-std::vector<std::string> Novel::getCharacterListString(){
+std::vector<std::string> Novel::getCharacterListString() const{
     
 }
 
@@ -52,7 +52,7 @@ std::vector<std::string> Novel::getCharacterListString(){
   @param  : a string indicating a character
   @post   : inserts the character into the character_list_ vector
 **/
-void Novel::addCharacter(std::string character){
+void Novel::addCharacter(const std::string character){
     character_list.push_back(character);
 }
 
@@ -60,7 +60,7 @@ void Novel::addCharacter(std::string character){
 /**
   @return   : the value of the film_adaptation private member
 **/
-bool Novel::hasFilmAdaptation(){
+bool Novel::hasFilmAdaptation() const{
     return this->film_adaptation;
 }
 
@@ -77,7 +77,7 @@ void Novel::setFilmAdaptation(){
 /**
   @return   : the value of the average rating private member
 **/
-double Novel::getAverageRating(){
+double Novel::getAverageRating() const{
     return this->avrg_rating;
 }
 
@@ -90,7 +90,7 @@ double Novel::getAverageRating(){
   @return   : creates and returns a review data type with
               score and rating as indicated by the parameters
 */
-double Novel::createReview(double review_score, std::string review_rating){
+double Novel::createReview(const double review_score,const std::string review_rating){
   return createReview(review_score, review_rating);
 }
 
@@ -99,8 +99,8 @@ double Novel::createReview(double review_score, std::string review_rating){
   @param  : a review object
   @post   : inserts the review argument into the reviews_ vector
 **/
-void Novel::addReview(){
-
+void Novel::addReview(const std::string review){
+  reviews.push_back(review);
 }
 
 
@@ -109,7 +109,7 @@ void Novel::addReview(){
             computes the average to set value of the average_rating_
             private member
 **/  
-void Novel::calculateAverageRating(){
+void Novel::calculateAverageRating() const{
 
 }
 
