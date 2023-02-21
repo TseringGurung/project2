@@ -13,7 +13,7 @@ Book(title, author, page_count, is_digital), book_subject_(book_subject), book_g
   @param  : a reference to a string representing the the subject of the book
   @post   : sets the private member variable to the value of the parameter
 **/
-void Textbook::setSubject(std::string& book_subject){
+void Textbook::setSubject(const std::string book_subject){
   this->book_subject_ = book_subject;
 }
 
@@ -21,7 +21,7 @@ void Textbook::setSubject(std::string& book_subject){
 /**
   @return  : the subject of the textbook
 **/
-std::string Textbook::getSubject(){
+std::string Textbook::getSubject() const{
   return this->book_subject_;
 }
 
@@ -30,7 +30,7 @@ std::string Textbook::getSubject(){
   @param  : a reference to a grade_level
   @post   : sets the private member variable to the value of the parameter
 **/
-void Textbook::setGradeLevel(grade_level& grade_level_){
+void Textbook::setGradeLevel(const grade_level grade_level_){
   this->book_grade_level_ = grade_level_;
 }
 
@@ -40,7 +40,7 @@ void Textbook::setGradeLevel(grade_level& grade_level_){
             (e.g. if the grade level is JUNIOR_HIGH,
             it returns "JUNIOR HIGH")
 **/
-int Textbook::getGradeLevel(){
+int Textbook::getGradeLevel() const{
   std::cout << "\"";
   return this->book_grade_level_;
   std::cout << "\"";
@@ -57,6 +57,6 @@ void Textbook::setReviewQuestions(){
 /**
   @return  : the flag indicating if the texbook has review questions
 **/
-bool Textbook::checkReviewQuestions(){
+bool Textbook::checkReviewQuestions() const{
   return this->book_review_questions;
 }
