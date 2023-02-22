@@ -44,7 +44,7 @@ bool Manual::setWebsite(const std::string& url_format){
     if (std::regex_match(url_format, regPattern)) {
       this->url = url_format;
     } else {
-      url = "";
+      url = "Broken Link";
     }
     website = true;
     return website;
