@@ -24,7 +24,7 @@ void Manual::setDevice(const std::string& name_of_device){
   @return  : the variable indicating the device the manual is for
 **/
 std::string Manual::getDevice() const{
-    return this->device_name;
+    return device_name;
 };
 
 
@@ -55,7 +55,7 @@ bool Manual::setWebsite(const std::string& url_format){
   @return  : the url for the website
 **/
 std::string Manual::getWebsite() const{
-    return this->url;
+    return url;
 };
 
 
@@ -73,7 +73,7 @@ void Manual::setVisualAid(const bool& present_aid){
   @return  : the visual aid flag
 **/
 bool Manual::hasVisualAid() const{
-    return this->visual_aid;
+    return visual_aid;
 };
 
 
@@ -81,5 +81,5 @@ bool Manual::hasVisualAid() const{
   @return  : the has website flag
 **/
 bool Manual::hasWebsite() const{
-    return this->website;
+    return website;
 };
