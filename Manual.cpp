@@ -7,8 +7,9 @@ Manual::Manual(){
     bool website = false;
 }
 
-Manual::Manual(std::string title, std::string author, int page_count, std::string name_of_device, bool is_digital = false, std::string url_format, bool present_aid = false):
+Manual::Manual(const std::string title,const std::string author,const int page_count,const std::string name_of_device,const bool is_digital,const std::string url_format,const bool present_aid = false):
 Book(title, author, page_count, is_digital), device_name(name_of_device), url(url_format), visual_aid(present_aid){}
+
 
 /**
   @param  : a reference to a string representing the device
@@ -42,13 +43,11 @@ bool Manual::setWebsite(const std::string& url_format){
 
     if (std::regex_match(url_format, regPattern)) {
       this->url = url_format;
-      website = true;
-      return true;
     } else {
       url = "";
-      website = false;
-      return false;
     }
+    website = true;
+    return website;
 };
 
 
@@ -65,7 +64,7 @@ std::string Manual::getWebsite() const{
   @post   : sets the private member variable indicating the presence
             of a visual aid to the value of the parameter
 **/
-void Manual::setVisualAid(bool present_aid){
+void Manual::setVisualAid(const bool& present_aid){
     this->visual_aid = present_aid;
 };
 
