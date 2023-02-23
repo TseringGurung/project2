@@ -13,7 +13,7 @@ Book(title, author, page_count, is_digital), book_subject_(book_subject), book_g
   @param  : a reference to a string representing the the subject of the book
   @post   : sets the private member variable to the value of the parameter
 **/
-void Textbook::setSubject(const std::string book_subject){
+void Textbook::setSubject(const std::string& book_subject){
   this->book_subject_ = book_subject;
 }
 
@@ -30,7 +30,7 @@ std::string Textbook::getSubject() const{
   @param  : a reference to a grade_level
   @post   : sets the private member variable to the value of the parameter
 **/
-void Textbook::setGradeLevel(const grade_level grade_level_){
+void Textbook::setGradeLevel(const grade_level& grade_level_){
   this->book_grade_level_ = grade_level_;
 }
 
@@ -40,10 +40,19 @@ void Textbook::setGradeLevel(const grade_level grade_level_){
             (e.g. if the grade level is JUNIOR_HIGH,
             it returns "JUNIOR HIGH")
 **/
-int Textbook::getGradeLevel() const{
-  std::cout << "\"";
-  return this->book_grade_level_;
-  std::cout << "\"";
+std::string Textbook::getGradeLevel() const{
+  switch (book_grade_level_) {
+        case grade_level::ELEMENTARY:
+            return "ELEMENTARY";
+        case grade_level::JUNIOR_HIGH:
+            return "JUNIOR HIGH";
+        case grade_level::HIGH_SCHOOL:
+            return "HIGH SCHOOL";
+        case grade_level::COLLEGE:
+            return "COLLEGE";
+        default:
+            return "NONE";
+    }
 }
 
 /**
