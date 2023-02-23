@@ -5,7 +5,7 @@
 #include <regex>
 #include "Book.hpp"
 
-class Manual : public Book{
+class Manual: public Book{
     /*
     - a string that represents a url
     - a string that represents the name of the device
