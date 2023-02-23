@@ -1,13 +1,13 @@
 #include "Manual.hpp"
 
 Manual::Manual(){
-    std::string url = "";
-    std::string device_name = "";
-    bool visual_aid = false;
-    bool website = false;
+    url = "";
+    device_name = "";
+    visual_aid = false;
+    website = false;
 }
 
-Manual::Manual(const std::string title,const std::string author,const int page_count,const std::string name_of_device,const std::string url_format,const bool is_digital,const bool present_aid):
+Manual::Manual(const std::string title,const std::string author,const int page_count,const bool is_digital,const std::string name_of_device,const std::string url_format,const bool present_aid):
 Book(title, author, page_count, is_digital), device_name(name_of_device), url(url_format), visual_aid(present_aid){}
 
 
@@ -64,7 +64,7 @@ std::string Manual::getWebsite() const{
   @post   : sets the private member variable indicating the presence
             of a visual aid to the value of the parameter
 **/
-void Manual::setVisualAid(const bool& present_aid){
+void Manual::setVisualAid(bool present_aid){
     this->visual_aid = present_aid;
 };
 
