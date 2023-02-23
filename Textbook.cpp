@@ -6,7 +6,7 @@ Textbook::Textbook(){
   book_review_questions = false;
 }
 
-Textbook::Textbook(const std::string title,const std::string author,const int page_count,const std::string book_subject,const grade_level book_grade_level,const bool is_digital,const bool review_questions):
+Textbook::Textbook(const std::string title,const std::string author,const int page_count,const bool is_digital,const std::string book_subject,const grade_level book_grade_level,const bool review_questions):
 Book(title, author, page_count, is_digital), book_subject_(book_subject), book_grade_level_(book_grade_level), book_review_questions(review_questions){}
 
 /**
