@@ -23,7 +23,7 @@ class Novel : public Book{
 private:
     std::string novel_genre;
     std::vector<std::string> character_list;
-    std::vector<std::string> reviews;
+    std::vector<review> reviews;
     double avrg_rating;
     bool film_adaptation;
     
@@ -46,17 +46,17 @@ Novel();
   @param     : A flag indicating whether there is a film adaptation
                 for this novel with DEFAULT VALUE False (a Boolean)
 */
-Novel(const std::string title,const std::string author,const int page_count,const bool is_digital,const std::string genre_novel,const bool film_adapt = false);
+Novel(const std::string title,const std::string author,const int page_count,const bool is_digital,const std::string genre_novel = "",const bool film_adapt = false);
 std::string getGenre() const;
-void setGenre(const std::string& genre_novel);
+void setGenre(const std::string &genre_novel);
 std::vector<std::string> getCharacterList() const;
 std::string getCharacterListString() const;
-void addCharacter(const std::string& character);
+void addCharacter(const std::string &character);
 bool hasFilmAdaptation() const;
 void setFilmAdaptation();
 double getAverageRating() const;
-review createReview(const double review_score,const std::string& review_rating);
-void addReview(const std::string& review);
+review createReview(const double review_score,const std::string &review_rating);
+void addReview(const review &review);
 void calculateAverageRating() const;
 
 
