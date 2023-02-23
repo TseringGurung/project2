@@ -1,17 +1,23 @@
 #ifndef TEXTBOOK_HPP
 #define TEXTBOOK_HPP
+#include "Book.hpp"
 #include <iostream>
 #include <string>
-#include "Book.hpp"
 
 
 /* - An enum named `grade_level`
      with values `{NONE,  ELEMENTARY, JUNIOR_HIGH, HIGH_SCHOOL, COLLEGE}`
      in that order
 */
-enum grade_level{NONE,  ELEMENTARY, JUNIOR_HIGH, HIGH_SCHOOL, COLLEGE};
+enum grade_level{
+    NONE,  
+    ELEMENTARY, 
+    JUNIOR_HIGH, 
+    HIGH_SCHOOL, 
+    COLLEGE
+};
 
-class Textbook : public Book{
+class Textbook: public Book{
     /* private
     - a string the represents the subject of the book
     - variable of type grade_level that represents the grade level of the book
@@ -43,7 +49,7 @@ class Textbook : public Book{
     @post      : The private members are set to the values of the
                     corresponding parameters.
     */
-    Textbook(const std::string title,const std::string author,const int page_count,const std::string book_subject, const bool is_digital,const grade_level book_grade_level = NONE,const bool review_questions = false);
+    Textbook(const std::string title,const std::string author,const int page_count,const std::string book_subject, const bool is_digital = false,const grade_level book_grade_level = NONE,const bool review_questions = false);
     void setSubject(const std::string &book_subject);
     std::string getSubject() const;
     void setGradeLevel(const grade_level &grade_level_);
