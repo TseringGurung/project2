@@ -46,7 +46,7 @@ Novel();
   @param     : A flag indicating whether there is a film adaptation
                 for this novel with DEFAULT VALUE False (a Boolean)
 */
-Novel(const std::string title,const std::string author,const int page_count,const std::string genre_novel,const bool is_digital = false,const bool film_adapt = false);
+Novel(const std::string title,const std::string author,const int page_count,const bool is_digital,const std::string genre_novel,const bool film_adapt = false);
 std::string getGenre() const;
 void setGenre(const std::string& genre_novel);
 std::vector<std::string> getCharacterList() const;
