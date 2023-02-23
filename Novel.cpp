@@ -8,7 +8,8 @@ Novel::Novel(){
     film_adaptation = false;
 }
 
-Novel::Novel(std::string title, std::string author, int page_count, bool is_digital, std::string genre_novel, bool film_adapt){}
+Novel::Novel(std::string title, std::string author, int page_count, bool is_digital, std::string genre_novel, bool film_adapt = false):
+Book(title, author, page_count, is_digital), novel_genre(genre_novel),film_adaptation(film_adapt){}
 
 
 /**
@@ -24,7 +25,7 @@ std::string Novel::getGenre() const{
   @post   : sets sets genre_ private member to the
               value of the parameter
 **/
-void Novel::setGenre(const std::string genre_novel){
+void Novel::setGenre(const std::string& genre_novel){
     this->novel_genre = genre_novel;
 }
 
@@ -43,8 +44,8 @@ std::vector<std::string> Novel::getCharacterList() const{
               and separated by a space " " .
               For example: "character1 character2 character3"
 **/
-std::vector<std::string> Novel::getCharacterListString() const{
-    
+std::string Novel::getCharacterListString() const{
+
 }
 
 
@@ -52,7 +53,7 @@ std::vector<std::string> Novel::getCharacterListString() const{
   @param  : a string indicating a character
   @post   : inserts the character into the character_list_ vector
 **/
-void Novel::addCharacter(const std::string character){
+void Novel::addCharacter(const std::string& character){
     character_list.push_back(character);
 }
 
@@ -90,7 +91,7 @@ double Novel::getAverageRating() const{
   @return   : creates and returns a review data type with
               score and rating as indicated by the parameters
 */
-double Novel::createReview(const double review_score,const std::string review_rating){
+review Novel::createReview(const double review_score,const std::string& review_rating){
   return createReview(review_score, review_rating);
 }
 
@@ -99,7 +100,7 @@ double Novel::createReview(const double review_score,const std::string review_ra
   @param  : a review object
   @post   : inserts the review argument into the reviews_ vector
 **/
-void Novel::addReview(const std::string review){
+void Novel::addReview(const std::string& review){
   reviews.push_back(review);
 }
 
@@ -112,4 +113,3 @@ void Novel::addReview(const std::string review){
 void Novel::calculateAverageRating() const{
 
 }
-
