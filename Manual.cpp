@@ -64,7 +64,7 @@ std::string Manual::getWebsite() const{
   @post   : sets the private member variable indicating the presence
             of a visual aid to the value of the parameter
 **/
-void Manual::setVisualAid(const bool present_aid){
+void Manual::setVisualAid(const bool &present_aid){
     this->visual_aid = present_aid;
 };
 
