@@ -8,7 +8,7 @@ Novel::Novel(){
     film_adaptation = false;
 }
 
-Novel::Novel(std::string title, std::string author, int page_count, bool is_digital, std::string genre_novel, bool film_adapt = false):
+Novel::Novel(const std::string title,const std::string author,const int page_count,const std::string genre_novel,const bool is_digital,const bool film_adapt):
 Book(title, author, page_count, is_digital), novel_genre(genre_novel),film_adaptation(film_adapt){}
 
 
@@ -45,7 +45,7 @@ std::vector<std::string> Novel::getCharacterList() const{
               For example: "character1 character2 character3"
 **/
 std::string Novel::getCharacterListString() const{
-
+  std::string total = "";
 }
 
 
