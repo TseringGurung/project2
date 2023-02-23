@@ -8,14 +8,17 @@ Manual::Manual(){
 }
 
 Manual::Manual(const std::string title,const std::string author,const int page_count,const bool is_digital,const std::string name_of_device,const std::string url_format,const bool present_aid):
-Book(title, author, page_count, is_digital), device_name(name_of_device), url(url_format), visual_aid(present_aid){}
-
+Book(title, author, page_count, is_digital){
+  device_name = name_of_device;
+  url = url_format;
+  visual_aid = present_aid;
+} 
 
 /**
   @param  : a reference to a string representing the device
   @post   : sets the private member variable to the value of the parameter
 **/
-void Manual::setDevice(const std::string& name_of_device){
+void Manual::setDevice(const std::string &name_of_device){
    device_name = name_of_device;
 }
 
@@ -38,7 +41,7 @@ std::string Manual::getDevice() const{
              store "Broken Link" in the link member variable (see <regex>)
              and either way set the has website flag to True
 **/
-bool Manual::setWebsite(const std::string& url_format){
+bool Manual::setWebsite(const std::string &url_format){
     std::regex regPattern("https://www\\.[a-zA-Z0-9]+\\.[a-zA-Z]{2,}");
 
     if (std::regex_match(url_format, regPattern)) {
