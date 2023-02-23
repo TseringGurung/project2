@@ -11,7 +11,7 @@ struct review {
     std::string rating_;
 };
 
-class Novel : public Book{
+class Novel: public Book{
 /* - a string indicating the genre of the novel
   - a vector of strings storing the characters
     in the novel (a character list)
