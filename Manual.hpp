@@ -1,9 +1,9 @@
 #ifndef MANUAL_HPP
 #define MANUAL_HPP
+#include "Book.hpp"
 #include <iostream>
 #include <string>
 #include <regex>
-#include "Book.hpp"
 
 class Manual: public Book{
     /*
