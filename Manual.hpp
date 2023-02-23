@@ -51,9 +51,9 @@ class Manual : public Book{
     std::string getDevice() const;
     bool setWebsite(const std::string &url_format);
     std::string getWebsite() const;
-    void setVisualAid(const bool &present_aid);
-    bool hasVisualAid();
-    bool hasWebsite();
+    void setVisualAid(const bool present_aid);
+    bool hasVisualAid() const;
+    bool hasWebsite() const;
 };
 
 #endif
