@@ -1,9 +1,10 @@
 #ifndef NOVEL_HPP
 #define NOVEL_HPP
+#include "Book.hpp"
 #include <iostream>
 #include <string>
 #include <vector>
-#include "Book.hpp"
+
 
 
 struct review {
