@@ -8,7 +8,7 @@ Novel::Novel(){
     film_adaptation = false;
 }
 
-Novel::Novel(const std::string title,const std::string author,const int page_count,const std::string genre_novel,const bool is_digital,const bool film_adapt):
+Novel::Novel(const std::string title,const std::string author,const int page_count,const bool is_digital,const std::string genre_novel,const bool film_adapt):
 Book(title, author, page_count, is_digital), novel_genre(genre_novel),film_adaptation(film_adapt){}
 
 
