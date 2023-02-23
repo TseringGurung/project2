@@ -6,7 +6,7 @@ Textbook::Textbook(){
   book_review_questions = false;
 }
 
-Textbook::Textbook(const std::string title,const std::string author,const int page_count,const grade_level book_grade_level,const std::string book_subject,const bool is_digital,const bool review_questions):
+Textbook::Textbook(const std::string title,const std::string author,const int page_count,const std::string book_subject, const bool is_digital,const grade_level book_grade_level,const bool review_questions):
 Book(title, author, page_count, is_digital){
   book_subject_ = book_subject;
   book_grade_level_ = book_grade_level;
@@ -35,7 +35,12 @@ std::string Textbook::getSubject() const{
   @post   : sets the private member variable to the value of the parameter
 **/
 void Textbook::setGradeLevel(const grade_level &grade_level_){
+  if(grade_level_ < 0 || grade_level_ > 4){
+    book_grade_level_ = NONE;
+  }
+  else{
   book_grade_level_ = grade_level_;
+  }
 }
 
 
