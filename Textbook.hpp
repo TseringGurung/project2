@@ -1,8 +1,9 @@
-#ifndef TEXTBOOK_H
-#define TEXTBOOK_H
+#ifndef TEXTBOOK_HPP
+#define TEXTBOOK_HPP
 #include <iostream>
 #include <string>
 #include "Book.hpp"
+
 
 /* - An enum named `grade_level`
      with values `{NONE,  ELEMENTARY, JUNIOR_HIGH, HIGH_SCHOOL, COLLEGE}`
@@ -42,7 +43,7 @@ class Textbook : public Book{
     @post      : The private members are set to the values of the
                     corresponding parameters.
     */
-    Textbook(const std::string title,const std::string author,const int page_count,const grade_level book_grade_level,const std::string book_subject ="",const bool is_digital = false,const bool review_questions = false);
+    Textbook(const std::string title,const std::string author,const int page_count,const std::string book_subject, const bool is_digital,const grade_level book_grade_level = NONE,const bool review_questions = false);
     void setSubject(const std::string &book_subject);
     std::string getSubject() const;
     void setGradeLevel(const grade_level &grade_level_);
