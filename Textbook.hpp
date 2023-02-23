@@ -42,7 +42,7 @@ class Textbook : public Book{
     @post      : The private members are set to the values of the
                     corresponding parameters.
     */
-    Textbook(const std::string title,const std::string author,const int page_count,const std::string book_subject,const grade_level book_grade_level,const bool is_digital= false,const bool review_questions = false);
+    Textbook(const std::string title,const std::string author,const int page_count,const bool is_digital, const std::string book_subject,const grade_level book_grade_level,const bool review_questions = false);
     void setSubject(const std::string& book_subject);
     std::string getSubject() const;
     void setGradeLevel(const grade_level& grade_level_);
