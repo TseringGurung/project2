@@ -4,19 +4,22 @@ Novel::Novel(){
     novel_genre ="";
     character_list = {};
     reviews = {};
-    avrg_rating = 0;
+    avrg_rating = 0.0;
     film_adaptation = false;
 }
 
 Novel::Novel(const std::string title,const std::string author,const int page_count,const bool is_digital,const std::string genre_novel,const bool film_adapt):
-Book(title, author, page_count, is_digital), novel_genre(genre_novel),film_adaptation(film_adapt){}
+Book(title, author, page_count, is_digital){
+  novel_genre = genre_novel;
+  film_adaptation = film_adapt;
+}
 
 
 /**
   @return   : the value of the genre private member
 **/
 std::string Novel::getGenre() const{
-    return this->novel_genre;
+    return novel_genre;
 }
 
 
@@ -25,8 +28,8 @@ std::string Novel::getGenre() const{
   @post   : sets sets genre_ private member to the
               value of the parameter
 **/
-void Novel::setGenre(const std::string& genre_novel){
-    this->novel_genre = genre_novel;
+void Novel::setGenre(const std::string &genre_novel){
+    novel_genre = genre_novel;
 }
 
 
@@ -34,7 +37,7 @@ void Novel::setGenre(const std::string& genre_novel){
   @return   : the vector containing the list of characters for this novel
 **/
 std::vector<std::string> Novel::getCharacterList() const{
-    return this->character_list;
+    return character_list;
 }
 
 
@@ -46,6 +49,10 @@ std::vector<std::string> Novel::getCharacterList() const{
 **/
 std::string Novel::getCharacterListString() const{
   std::string total = "";
+  for(int i = 0; i < character_list.size();i++){
+    total += character_list[i] + " ";
+  }
+  return total;
 }
 
 
@@ -53,7 +60,7 @@ std::string Novel::getCharacterListString() const{
   @param  : a string indicating a character
   @post   : inserts the character into the character_list_ vector
 **/
-void Novel::addCharacter(const std::string& character){
+void Novel::addCharacter(const std::string &character){
     character_list.push_back(character);
 }
 
@@ -62,7 +69,7 @@ void Novel::addCharacter(const std::string& character){
   @return   : the value of the film_adaptation private member
 **/
 bool Novel::hasFilmAdaptation() const{
-    return this->film_adaptation;
+    return film_adaptation;
 }
 
 
@@ -71,7 +78,7 @@ bool Novel::hasFilmAdaptation() const{
   @post   : sets has_film_adaptation_ private member to true
 **/
 void Novel::setFilmAdaptation(){
-    this->film_adaptation = true;
+    film_adaptation = true;
 }
 
 
@@ -79,7 +86,7 @@ void Novel::setFilmAdaptation(){
   @return   : the value of the average rating private member
 **/
 double Novel::getAverageRating() const{
-    return this->avrg_rating;
+    return avrg_rating;
 }
 
 
@@ -91,8 +98,11 @@ double Novel::getAverageRating() const{
   @return   : creates and returns a review data type with
               score and rating as indicated by the parameters
 */
-review Novel::createReview(const double review_score,const std::string& review_rating){
-  return createReview(review_score, review_rating);
+review Novel::createReview(const double review_score,const std::string &review_rating){
+  review ratings;
+  ratings.score_ = review_score;
+  ratings.rating_ = review_rating;
+  return ratings;
 }
 
 
@@ -100,7 +110,7 @@ review Novel::createReview(const double review_score,const std::string& review_r
   @param  : a review object
   @post   : inserts the review argument into the reviews_ vector
 **/
-void Novel::addReview(const std::string& review){
+void Novel::addReview(const review &review){
   reviews.push_back(review);
 }
 
@@ -111,5 +121,10 @@ void Novel::addReview(const std::string& review){
             private member
 **/  
 void Novel::calculateAverageRating() const{
-
+  double total = 0.0;
+  review ratings;
+  for(int i = 0; i < reviews.size(); i++){
+    total += ratings.score_;
+  }
+  double avrg_rating = total / reviews.size();
 }
