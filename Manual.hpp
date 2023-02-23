@@ -1,5 +1,5 @@
-#ifndef MANUAL_H
-#define MANUAL_H
+#ifndef MANUAL_HPP
+#define MANUAL_HPP
 #include <iostream>
 #include <string>
 #include <regex>
