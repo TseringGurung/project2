@@ -36,7 +36,7 @@ public:
 Novel();
 
 /**
-  Parameterized constructor.
+  Parameterized constructor.s
   @param     : The title of the book (a string)
   @param     : The author of the book (a string)
   @param     : The number of pages in the book (a positive integer)
@@ -46,7 +46,7 @@ Novel();
   @param     : A flag indicating whether there is a film adaptation
                 for this novel with DEFAULT VALUE False (a Boolean)
 */
-Novel(std::string title, std::string author, int page_count, bool is_digital, std::string genre_novel, bool film_adapt);
+Novel(const std::string title,const std::string author,const int page_count,const std::string genre_novel,const bool is_digital = false,const bool film_adapt = false);
 std::string getGenre() const;
 void setGenre(const std::string& genre_novel);
 std::vector<std::string> getCharacterList() const;
