@@ -8,7 +8,7 @@ Novel::Novel(){
     film_adaptation = false;
 }
 
-Novel::Novel(const std::string title,const std::string author,const int page_count,const bool is_digital,const std::string genre_novel,const bool film_adapt):
+Novel::Novel(const std::string title,const std::string author,const int page_count,const std::string genre_novel,const bool is_digital,const bool film_adapt):
 Book(title, author, page_count, is_digital){
   novel_genre = genre_novel;
   film_adaptation = film_adapt;
@@ -120,11 +120,11 @@ void Novel::addReview(const review &review){
             computes the average to set value of the average_rating_
             private member
 **/  
-void Novel::calculateAverageRating() const{
+
+void Novel::calculateAverageRating() {
   double total = 0.0;
-  review ratings;
   for(int i = 0; i < reviews.size(); i++){
-    total += ratings.score_;
+    total += reviews[i].score_;
   }
-  double avrg_rating = total / reviews.size();
+  avrg_rating = total / reviews.size();
 }
