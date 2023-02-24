@@ -2,8 +2,8 @@
 
 Novel::Novel(){
     novel_genre ="";
-    character_list = {};
-    reviews = {};
+    character_list;
+    reviews;
     avrg_rating = 0.0;
     film_adaptation = false;
 }
@@ -12,6 +12,9 @@ Novel::Novel(const std::string title,const std::string author,const int page_cou
 Book(title, author, page_count, is_digital){
   novel_genre = genre_novel;
   film_adaptation = film_adapt;
+  character_list;
+  reviews;
+  avrg_rating = 0.0;
 }
 
 
@@ -98,7 +101,7 @@ double Novel::getAverageRating() const{
   @return   : creates and returns a review data type with
               score and rating as indicated by the parameters
 */
-review Novel::createReview(const double review_score,const std::string &review_rating){
+review Novel::createReview(const double &review_score,const std::string &review_rating){
   review ratings;
   ratings.score_ = review_score;
   ratings.rating_ = review_rating;
@@ -121,7 +124,7 @@ void Novel::addReview(const review &review){
             private member
 **/  
 
-void Novel::calculateAverageRating() {
+void Novel::calculateAverageRating(){
   double total = 0.0;
   for(int i = 0; i < reviews.size(); i++){
     total += reviews[i].score_;
