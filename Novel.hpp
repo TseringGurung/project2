@@ -1,3 +1,12 @@
+/*
+Name: Tsering Gurung
+Date: 02/24/2023
+Class: CS 235
+Professor: Tiziana Ligorio
+Assignment: Novel.hpp
+Project 2: Create a Novel class with Book Inherited.
+*/
+
 #ifndef NOVEL_HPP
 #define NOVEL_HPP
 #include "Book.hpp"
