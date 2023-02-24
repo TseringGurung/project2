@@ -52,7 +52,7 @@ class Manual: public Book{
     bool setWebsite(const std::string &url_format);
     std::string getWebsite() const;
     void setVisualAid(const bool &present_aid);
-    bool hasWebsite();
+    bool hasWebsite() const;
     bool hasVisualAid() const;
 };
 
