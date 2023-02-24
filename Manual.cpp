@@ -1,6 +1,15 @@
-#include "Manual.hpp"
-#include <regex>
+/*
+Name: Tsering Gurung
+Date: 02/24/2023
+Class: CS 235
+Professor: Tiziana Ligorio
+Assignment: Manual.cpp
+Project 2: Create a Manual class with Book Inherited.
+*/
 
+#include "Manual.hpp"
+
+/*Default Constructor*/
 Manual::Manual(){
     url = "";
     device_name = "";
@@ -8,6 +17,7 @@ Manual::Manual(){
     website = false;
 }
 
+/*Parameterized Constructor*/
 Manual::Manual(const std::string title,const std::string author,const int page_count,const std::string name_of_device,const bool is_digital,const std::string url_format,const bool present_aid):
 Book(title, author, page_count, is_digital){
   device_name = name_of_device;
@@ -50,7 +60,7 @@ std::string Manual::getDevice() const{
              and either way set the has website flag to True
 **/
 bool Manual::setWebsite(const std::string &url_format){
-    std::regex regPattern("(https?://www\\.[a-zA-Z0-9]+\\.[a-zA-Z0-9]{2,})");
+    std::regex regPattern("(https?://)([\\w\\d-]+\\.?)+[A-Za-z]{2,}(/[\\w\\d-]*)*");
 
     if (std::regex_match(url_format, regPattern)) {
       url = url_format;
