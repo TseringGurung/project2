@@ -13,6 +13,7 @@ Book(title, author, page_count, is_digital){
   device_name = name_of_device;
   url = url_format;
   visual_aid = present_aid;
+  website = false;
   //The parameterized constructor will give the url string a default value of empty strinig if no value is pass to the constructor for it.
   setWebsite(url);
   if(url == "Broken Link"){
