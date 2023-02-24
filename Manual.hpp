@@ -1,5 +1,5 @@
-#ifndef MANUAL_HPP
-#define MANUAL_HPP
+#ifndef MANUAL_HPP_
+#define MANUAL_HPP_
 #include "Book.hpp"
 #include <iostream>
 #include <string>
