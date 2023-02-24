@@ -83,6 +83,7 @@ bool Manual::hasVisualAid() const{
 /**
   @return  : the has website flag
 **/
-bool Manual::hasWebsite() const{
+bool Manual::hasWebsite(){
+    website = true;
     return website;
 }
