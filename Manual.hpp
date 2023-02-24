@@ -1,5 +1,5 @@
-#ifndef MANUAL_HPP_
-#define MANUAL_HPP_
+#ifndef MANUAL_HPP
+#define MANUAL_HPP
 #include "Book.hpp"
 #include <iostream>
 #include <string>
@@ -46,14 +46,14 @@ class Manual: public Book{
                     If the URL is ill-formatted, the website is set to
                     empty string and the website flag is set to False.
     */
-    Manual(const std::string title,const std::string author,const int page_count,const std::string name_of_device,const bool is_digital = false,const std::string url_format = "",const bool present_aid = false);
+    Manual(const std::string title,const std::string author,const int page_count,const std::string name_of_device ,const bool is_digital = false,const std::string url_format = "",const bool present_aid = false);
     void setDevice(const std::string &name_of_device);
     std::string getDevice() const;
     bool setWebsite(const std::string &url_format);
     std::string getWebsite() const;
     void setVisualAid(const bool &present_aid);
-    bool hasWebsite() const;
     bool hasVisualAid() const;
+    bool hasWebsite() const;
 };
 
 #endif
