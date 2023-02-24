@@ -7,7 +7,7 @@ Manual::Manual(){
     website = false;
 }
 
-Manual::Manual(const std::string title,const std::string author,const int page_count,const bool is_digital,const std::string name_of_device,const std::string url_format,const bool present_aid):
+Manual::Manual(const std::string title,const std::string author,const int page_count,const std::string name_of_device,const bool is_digital,const std::string url_format,const bool present_aid):
 Book(title, author, page_count, is_digital){
   device_name = name_of_device;
   url = url_format;
