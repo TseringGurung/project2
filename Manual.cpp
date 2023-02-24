@@ -1,4 +1,5 @@
 #include "Manual.hpp"
+#include <regex>
 
 Manual::Manual(){
     url = "";
