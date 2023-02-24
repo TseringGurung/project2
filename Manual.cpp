@@ -16,7 +16,6 @@ Book(title, author, page_count, is_digital){
   setWebsite(url);
   if(url == "Broken Link"){
     url = "";
-    website = false;
   }
 } 
 
