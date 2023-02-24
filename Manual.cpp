@@ -48,14 +48,15 @@ std::string Manual::getDevice() const{
              and either way set the has website flag to True
 **/
 bool Manual::setWebsite(const std::string &url_format){
-    std::regex regPattern("^(http|https)://www\.[a-zA-Z0-9]+\.[a-zA-Z0-9]{2,}$");
+    std::regex regPattern("(https?://www\\.[a-zA-Z0-9]+\\.[a-zA-Z0-9]{2,})");
 
     if (std::regex_match(url_format, regPattern)) {
       url = url_format;
+      website = true;
     } else {
       url = "Broken Link";
+      website = true;
     }
-    website = true;
     return website;
 }
 
