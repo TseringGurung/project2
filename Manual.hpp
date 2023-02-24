@@ -1,5 +1,5 @@
-#ifndef MANUAL_HPP
-#define MANUAL_HPP
+#ifndef MANUAL_HPP_
+#define MANUAL_HPP_
 #include "Book.hpp"
 #include <iostream>
 #include <string>
@@ -13,10 +13,10 @@ class Manual: public Book{
     - a boolean indicating whether the Manual has a website
     */
     private:
-    std::string url;
-    std::string device_name;
-    bool visual_aid;
-    bool website;
+        std::string url;
+        std::string device_name;
+        bool visual_aid;
+        bool website;
 
     public:
     /**
