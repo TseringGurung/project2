@@ -1,5 +1,14 @@
-#ifndef MANUAL_HPP_
-#define MANUAL_HPP_
+/*
+Name: Tsering Gurung
+Date: 02/24/2023
+Class: CS 235
+Professor: Tiziana Ligorio
+Assignment: Manual.hpp
+Project 2: Create a Manual class with Book Inherited.
+*/
+
+#ifndef MANUAL_HPP
+#define MANUAL_HPP
 #include "Book.hpp"
 #include <iostream>
 #include <string>
