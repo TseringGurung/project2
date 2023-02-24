@@ -1,5 +1,15 @@
+/*
+Name: Tsering Gurung
+Date: 02/24/2023
+Class: CS 235
+Professor: Tiziana Ligorio
+Assignment: Novel.cpp
+Project 2: Create a Novel class with Book Inherited.
+*/
+
 #include "Novel.hpp"
 
+/*Default Constructor*/
 Novel::Novel(){
     novel_genre ="";
     character_list;
@@ -8,6 +18,7 @@ Novel::Novel(){
     film_adaptation = false;
 }
 
+/*Parameterized Constructor*/
 Novel::Novel(const std::string title,const std::string author,const int page_count,const std::string genre_novel,const bool is_digital,const bool film_adapt):
 Book(title, author, page_count, is_digital){
   novel_genre = genre_novel;
