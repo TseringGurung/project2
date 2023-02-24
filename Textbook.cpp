@@ -1,3 +1,12 @@
+/*
+Name: Tsering Gurung
+Date: 02/24/2023
+Class: CS 235
+Professor: Tiziana Ligorio
+Assignment: Textbook.cpp
+Project 2: Create a Textbook class with Book Inherited.
+*/
+
 #include "Textbook.hpp"
 
 Textbook::Textbook(){
